@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="나의 취미 유형을 알아보는 HBTI 테스트 - Brand:I">
+    <meta property="og:title" content="HBTI 취미유형 테스트 | Brand:I">
+    <meta property="og:description" content="9가지 질문으로 알아보는 나의 취미 성향! 당신은 어떤 유형인가요?">
+    <meta property="og:image" content="og-image.png">
+    <meta property="og:type" content="website">
+    <title>HBTI 취미유형 테스트 | Brand:I</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Welcome Page -->
+        <div id="welcome-page" class="page active">
+            <div class="welcome-content">
+                <!-- 로고 -->
+                <div class="logo">
+                    <img src="logo_in_app.png" alt="Brand:I" class="logo-image">
+                </div>
+
+                <!-- 타이틀 + 캐릭터 원형 배치 -->
+                <div class="title-with-characters">
+                    <div class="orbit-characters">
+                        <div class="orbit-char orbit-1">
+                            <img src="characters_and_objects/SCE.png" alt="연금술사">
+                        </div>
+                        <div class="orbit-char orbit-2">
+                            <img src="characters_and_objects/DCG.png" alt="갓생러">
+                        </div>
+                        <div class="orbit-char orbit-3">
+                            <img src="characters_and_objects/DAE.png" alt="인싸">
+                        </div>
+                        <div class="orbit-char orbit-4">
+                            <img src="characters_and_objects/SAG.png" alt="과몰입러">
+                        </div>
+                        <div class="orbit-char orbit-5">
+                            <img src="characters_and_objects/DAG.png" alt="에너자이저">
+                        </div>
+                        <div class="orbit-char orbit-6">
+                            <img src="characters_and_objects/SAE.png" alt="덕질러">
+                        </div>
+                        <div class="orbit-char orbit-7">
+                            <img src="characters_and_objects/SCG.png" alt="성장러">
+                        </div>
+                        <div class="orbit-char orbit-8">
+                            <img src="characters_and_objects/DCE.png" alt="행동가">
+                        </div>
+                    </div>
+                    <div class="center-title">
+                        <h1 class="title">취미 성향<br>테스트</h1>
+                        <p class="subtitle-fun">나는 어떤 취미 유형일까?</p>
+                    </div>
+                </div>
+
+                <!-- 시작 버튼 -->
+                <div class="start-section">
+                    <button class="btn-primary btn-start" onclick="startTest()">
+                        시작하기
+                    </button>
+                    <p class="time-info">9개 질문 · 약 2분 소요</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Question Page -->
+        <div id="question-page" class="page">
+            <div class="question-content">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+                <p class="question-number" id="question-number">Q1</p>
+                <h2 class="question-text" id="question-text"></h2>
+                <div class="options">
+                    <button class="option-btn" id="option-a" onclick="selectAnswer('A')">
+                        <span class="option-text" id="option-a-text"></span>
+                    </button>
+                    <button class="option-btn" id="option-b" onclick="selectAnswer('B')">
+                        <span class="option-text" id="option-b-text"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Result Page -->
+        <div id="result-page" class="page">
+            <div class="result-content">
+                <div class="result-card" id="result-card">
+                    <!-- 카드 내용은 JS에서 동적 생성 -->
+                </div>
+                <p class="result-description" id="result-description"></p>
+                <div class="result-examples">
+                    <p class="examples-label">이런 취미가 잘 맞아요</p>
+                    <p class="examples-text" id="result-examples"></p>
+                </div>
+                <div class="axis-breakdown" id="axis-breakdown"></div>
+                <div class="cta-section">
+                    <a href="https://apps.apple.com/app/brandi" class="btn-primary btn-download" target="_blank">
+                        <span class="btn-download-icon">📱</span>
+                        <span class="btn-download-text">
+                            <span class="btn-download-main">Brand:I 앱 다운로드</span>
+                            <span class="btn-download-sub">취미를 성장시키고 자신을 브랜딩하세요!</span>
+                        </span>
+                    </a>
+                    <button class="btn-share" onclick="shareResult()">공유하기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
